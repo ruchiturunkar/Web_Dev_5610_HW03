@@ -1,0 +1,26 @@
+defmodule Practice.Fact do
+  def parse_int(text) do
+    {num, _} = Integer.parse(text)
+    num
+  end
+
+  def fact(x) do
+    # This should handle +,-,*,/ with order of operations,
+    # but doesn't need to handle parens.
+    x
+    |> Integer.parse(x)
+    |> Integer.mod(,2)	
+    y = Integer.parse(x)
+    z = Integer.mod(y,2)
+    if z=1 do 1
+    else 0
+    end
+    # Hint:
+    # expr
+    # |> split
+    # |> tag_tokens  (e.g. [+, 1] => [{:op, "+"}, {:num, 1.0}]
+    # |> convert to postfix
+    # |> reverse to prefix
+    # |> evaluate as a stack calculator using pattern matching
+  end
+end
